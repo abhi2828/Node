@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "nodejs learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhi2828/Node.git"
+  },
+  "keywords": [
+    "nodejs",
+    "learning"
+  ],
+  "author": "abhay mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhi2828/Node/issues"
+  },
+  "homepage": "https://github.com/abhi2828/Node#readme"
+}
