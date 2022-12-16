@@ -12,3 +12,8 @@ node initial setup
 8.author: project owner
 9.license : click enter
 10. is it ok ?  click enter
+
+=> its a package we need to install nodemon using commond 'npm i nodemon -g'
+ as it help to hot reload the file, just like feature we get Reactjs
+
+=> 
