@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/abhi2828/Node/issues"
   },
-  "homepage": "https://github.com/abhi2828/Node#readme"
+  "homepage": "https://github.com/abhi2828/Node#readme",
+  "dependencies": {
+    "simple-node-logger": "^21.8.12"
+  }
 }
