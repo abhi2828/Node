@@ -1,19 +1,20 @@
-node initial setup
-=> create git repo for project
-=> run command 'npm init' to get package.json file in current node project folder
-=> provide details like 
-1.package name : choose default or enter want u want
-2.version : click enter
-3.description : enter project details
-4.entry point : default is index.js or u can set what u want (basically it asks which file will load first)
-5.test command : click enter
-6.git repository : it must be ur current git repository that u have created for your project
-7.keywords: u can eneter any thing
-8.author: project owner
-9.license : click enter
-10. is it ok ?  click enter
+1. in this branch we learn about how to get path of the current folder using "path module", create files & 
+text content in it using writeFileSync() of "fs module" dynamically in side any specific folder
 
-=> its a package we need to install nodemon using commond 'npm i nodemon -g'
- as it help to hot reload the file, just like feature we get Reactjs
+2.we learn create custom path using join() of "path module" for creating files in specific path  
 
-=> 
+3.join() and parameter we pass is '__dirname' to get current folder path
+
+4. we run our code in side for loop to create multiple file 
+
+5.keep in mind the name of files so the our files don't override it self
+
+6.we learn to list all create files using readdir() of "fs module" which takes two arguments
+path of the folder and one function which takes 2 arguments erroe & files (its a array which have list of files name in it  ) 
+eg.     [   
+            'testfile0.txt',
+            'testfile1.txt',
+            'testfile2.txt',
+            'testfile3.txt',
+            'testfile4.txt'
+        ]
