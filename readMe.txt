@@ -16,4 +16,4 @@ node initial setup
 => its a package we need to install nodemon using commond 'npm i nodemon -g'
  as it help to hot reload the file, just like feature we get Reactjs
 
-=> 
+=> install express.js using comman "npm i express" 
