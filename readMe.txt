@@ -17,3 +17,4 @@ node initial setup
  as it help to hot reload the file, just like feature we get Reactjs
 
 => install express.js using comman "npm i express" 
+=> install ejs using comman "npm i ejs" 
