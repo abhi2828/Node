@@ -18,3 +18,4 @@ node initial setup
 
 => install express.js using comman "npm i express" 
 => install ejs using comman "npm i ejs" 
+=> create new branch mongodb install mongodb & did mongodb setup 

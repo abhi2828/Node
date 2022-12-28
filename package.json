@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/abhi2828/Node#readme",
   "dependencies": {
+    "mongodb": "^4.13.0",
     "simple-node-logger": "^21.8.12"
   }
 }
