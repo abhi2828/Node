@@ -18,4 +18,5 @@ node initial setup
 
 => install express.js using comman "npm i express" 
 => install ejs using comman "npm i ejs" 
-=> create new branch mongodb install mongodb & did mongodb setup 
+=> create new branch "mongoDB" install mongodb , did mongodb setup , we learn how to set mongoDB connection & how to perform crud operation on mongoDB 
+=> create  "dynamic_API_sample1" branch in this branch we will learn how create simple API
