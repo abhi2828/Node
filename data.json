@@ -1,0 +1,20 @@
+[{
+    "name":"M-30",
+    "price":15000,
+    "brand":"samsung",
+    "category":"mobile"
+  },
+  {
+    "name":"M-40",
+    "price":25000,
+    "brand":"samsung",
+    "category":"mobile"
+  },
+  {
+    "name":"iphone 13pro max",
+    "price":80000,
+    "brand":"apple",
+    "category":"mobile"
+  }
+
+]

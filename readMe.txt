@@ -1,29 +1,54 @@
-@ Route-level middlweare :
++{  name:'note 11T',
+  price:20000,
+  brand:'redme',
+  category:'mobile'
+}
 
-here we learn how Route Route level middlweare work and how we can achive it
+@ how to connect mongodb ?
+=> 
+steps:
+1.import mongoClient from mongodb 
+const {mongoClient} = require('mongodb');
 
-1. we need to import or require express.Router()
-2. we want to write code for middlweare internally or externally earlier we create 
-internal middlweare now we have created external middlweare in middlweare file 
-& require it our index.js pass middleware in use() like below
+2.make ur application aware of the path of mongodb i.e need to store path 
+=> const url = 'mongodb://localhost:27017'
 
-const filter_request = require('./middleware')
+3.pass the url to mongoClient() so tht mongodb able to understand tht we need to fetch the data from where 
+=> const client  = new mongoClient(url)
 
-Route.use(filter_request)
+4.now to we have everything available so now we can connect to our mongodb using connect()
+we will create a function and connect to mongodb or client 
 
-3.then we need to apply middleware to url like below
+async function getData() {
+  let connect = await client.connect();
+  } ]i[\7/-]
 
-Route.get('/user',(req,res)=>{
-  res.send('<h1>welcome to user page</h1>')
-})
+5.now we are connect to mongodb but now we have to connect to our db 'e-com' for wh.0ich we will use 
+db() and pass db name in it like below.
 
-4. finally connect application with Route
+ let db = connect.db('e-com')
+            ||  complete function is written below
+ +\
+ ';lkjhgfdx- + 2QAZ-+       \/
 
-app.use('/',Route)
+async function getData() {
+  let connect = await client.connect();
+   let db = connect.db('e-com')
+  }
 
--------------------------------------------------------
+6. now we are connect to db but now we have to connect to our collection (we can call it table for understanding table) 
+'products' for which we will use collection() and pass collection name in it like below.
 
-@ difference between application level VS Route level middleware ?
+ let collection = db.collection('products')
+            ||  complete function is written below
+            \/
 
-=> application level middleware apply globally on application but Route 
-level middleware apply globally as well as individually or group of Route
+async function getData() {
+    let connect = await client.connect();
+    let db = connect.db('e-com')
+    let collection = db.collection('products')
+    let res = await collection.find({}).toArray()
+      console.log('res', res)
+  }
+
+  getData()
