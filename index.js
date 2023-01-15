@@ -6,7 +6,7 @@ const client = new MongoClient(URL)
 const dbName = 'e-com'
 const collectionName = 'products'
 
-const dbconnect = async ()=>{
+const dbConnect = async ()=>{
   let connect = await client.connect()
   let db = connect.db(dbName)
   let collection = db.collection(collectionName)
@@ -16,4 +16,4 @@ const dbconnect = async ()=>{
 }
 
 
-dbconnect()
+dbConnect()

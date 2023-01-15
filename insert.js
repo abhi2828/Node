@@ -1,4 +1,4 @@
-const dbconnect = require('./mongodb')
+const dbConnect = require('./mongodb')
 
 let insertData =
  [
@@ -35,7 +35,7 @@ let insertData =
 ]
 
 const insert = async ()=>{
-    const db = await dbconnect()
+    const db = await dbConnect()
     const res = await db.insertMany(insertData)
 console.log(res,res.acknowledged ?'data inserted' : 'unable to insert data');
 }

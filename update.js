@@ -1,7 +1,7 @@
-const dbconnect = require('./mongodb')
+const dbConnect = require('./mongodb')
 
 const update = async ()=>{
-let db = await dbconnect()
+let db = await dbConnect()
 let res = await db.updateOne(
     {name:"iphone pro"},{
          $set:{
