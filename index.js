@@ -1,39 +1,47 @@
-const mongoose = require("mongoose");
-const URL = "mongodb://localhost:27017/e-com";
-mongoose.connect(URL);
+const express = require("express");
+require("./config");
+const product = require("./product");
+const app = express();
 
-let productSchema = new mongoose.Schema({
-  name: String,
-  price: Number,
-  brand: String,
-  category: String,
+app.use(express.json());
+
+app.get("/get/", async (req, resp) => {
+  let data = await product.find(req.body);
+  resp.send(data);
 });
 
-const savedInDB = async () => {
-  let productsModel = mongoose.model("products", productSchema);
-  let data = new productsModel({
-    name: "s23",
-    price: 100000,
-    brand: "samsung",
-    category: "mobile",
+app.get("/Search/:key", async (req, resp) => {
+  console.log("req.params", req.params.key);
+  let data = await product.find({
+    "$or": [
+      { name: { $regex: req.params.key } },
+      { brand: { $regex: req.params.key } },
+      // { price: { $regex: req.params.key } },  // what hav i done wrong here it is showing issue 
+      { category: { $regex: req.params.key } }
+    ],
   });
-  let result = await data.save();
-  console.log("result", result);
-};
-savedInDB();
+  resp.send(data);
+});
 
-const updateInDB = async () => {
-  let productsModel = mongoose.model("products", productSchema);
-  let data = await productsModel.updateOne({name: "s23"},{
-    $set:{name: "s23 ultra"}
-  })
-  console.log("result", data);
-};
-// updateInDB();
+app.post("/post", (req, resp) => {
+  let data = new product(req.body);
+  let result = data.save();
+  console.log("req", req.body);
+  resp.send("Yes, its working now");
+});
 
-const deleteInDB = async () => {
-  let productsModel = mongoose.model("products", productSchema);
-  let data = await productsModel.deleteMany({name: "s23"})
-  console.log("result", data);
-};
-// deleteInDB();
+app.delete("/delete/:_id", async (req, resp) => {
+  console.log("req.params", req.params);
+  // let data =req.params
+  let data = await product.deleteOne(req.params);
+  resp.send(data);
+});
+app.put("/put/:_id", async (req, resp) => {
+  let mydata = req.params;
+  let data = await product.updateOne(mydata, {
+    $set: req.body,
+  });
+  resp.send(data);
+});
+
+app.listen(5000);
